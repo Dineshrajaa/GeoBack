@@ -1,4 +1,5 @@
 geoBackModule.controller('homeCtrl', function($scope, $http) {
+	$scope.showCard=false;
     $scope.enableBGM = function() {
         cordova.plugins.backgroundMode.enable();
         cordova.plugins.backgroundMode.onactivate = function() {
@@ -11,6 +12,8 @@ geoBackModule.controller('homeCtrl', function($scope, $http) {
             }, 5000);
             $http.get("http://202.129.196.50/apmobile/APMobileService.svc/getcompanylist/827ccb0eea8a706c4c34a16891f84e7b")
                 .success(function(data) {
+                	$scope.showCard=true;
+                	$scope.fetchedData=JSON.stringify(data);
                     console.log(data);
                 })
                 .error(function(data) {
