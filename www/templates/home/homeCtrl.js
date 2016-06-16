@@ -57,7 +57,18 @@ geoBackModule.controller('homeCtrl', function($scope, $http,$interval) {
         $http.get("http://202.129.196.131:8085/demo/markers/ws.php?func=store&lat=" + lat + "&lng=" + lng)
             .success(function(data) {
                 $scope.showCard = true;
-                $scope.fetchedData = JSON.stringify(data);
+                $scope.printStoredLocations();
+                console.log(data);
+            })
+            .error(function(data) {
+                alert("ERROR");
+            });
+    };
+    $scope.printStoredLocations=function(){
+        $http.get(" http://202.129.196.131:8085/demo/markers/ws.php?func=view")
+            .success(function(data) {
+                $scope.showCard = true;
+                $scope.fetchedData =data; //JSON.stringify(data);
                 console.log(data);
             })
             .error(function(data) {

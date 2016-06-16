@@ -3,8 +3,8 @@
         <button ng-click="enableBGM();" class="button button-calm button-block">Enable</button>
         <button ng-click="disableBGM()" class="button button-assertive button-block">Disable</button>
         <div class="card"  ng-if="showCard">
-            <div class="item item-text-wrap">
-               {{fetchedData}}
+            <div class="item item-text-wrap" ng-repeat="fd in fetchedData">
+               Id:{{fd.id}} Lat:{{fd.lat}} Lng:{{fd.lng}}
             </div>
         </div>
     </ion-content>
