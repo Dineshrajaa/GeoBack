@@ -40,6 +40,7 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
-    <platform name="ios"></platform>
+    <platform name="ios" />
     <plugin name="cordova-plugin-background-mode" spec="https://github.com/katzer/cordova-plugin-background-mode.git" />
+    <plugin name="cordova-plugin-geolocation" spec="~2.2.0" />
 </widget>
